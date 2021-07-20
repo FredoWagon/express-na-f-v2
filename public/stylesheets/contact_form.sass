@@ -1,0 +1,58 @@
+
+.contact__bloc
+  display: flex
+  position: relative
+  width: 100%
+  overflow: hidden
+  padding-top: 5rem
+  .contact__image
+    transform: rotate(-17deg)
+    img
+      width: 100%
+      transform: translate(225px, 110px)
+
+
+
+.contact
+  position: absolute
+  z-index: 10
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: fit-content
+  .contact__input
+    margin: 2rem 0
+    height: 3rem
+    border-radius: 5px
+    overflow: hidden
+    box-shadow: 0 0px 4px 0px #00000036
+    input
+      border: unset
+      padding-left: 1rem
+      outline: none
+      width: 100%
+      height: 100%
+
+  .contact__input-text-area
+    border-radius: 5px
+    overflow: hidden
+    box-shadow: 0 0px 4px 0px #00000036
+    textarea
+      outline: none
+      border: unset
+      padding: 1rem
+      height: 100%
+
+  .contact__btn
+    outline: none
+    border: unset
+    border-radius: 8px
+    margin: 2rem 0
+    padding: 1rem 1.5rem
+    background-color: #E35364
+    color: white
+    &:hover
+      opacity: 0.7
+      cursor: pointer
+      transition: opacity 0.3s ease
