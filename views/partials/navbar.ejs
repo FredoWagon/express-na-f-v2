@@ -6,9 +6,9 @@
     </div>
 
     <div class="navbar__menu">
-        <a href="/bio">Bio</a>
-        <a href="/contact">Contact</a>
-        <p>Oeuvres</p>
+        <a class="<%- current_url === "bio" ? "active_nav_link" : "" %>" href="/bio">Bio</a>
+        <a class="<%- current_url === "contact" ? "active_nav_link" : "" %>" href="/contact">Contact</a>
+        <a href="#">Oeuvres</a>
     </div>
 
 </div>

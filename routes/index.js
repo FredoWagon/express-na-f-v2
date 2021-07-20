@@ -4,17 +4,20 @@ const { sendMessage } = require('../lib/nodemailer')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  const current_url = req.active = req.path.split('/')[1]
+  res.render('index', { title: 'Express', current_url: current_url });
 });
 
 
 router.get('/bio', function (req, res, next) {
-  res.render('bio');
+  const current_url = req.active = req.path.split('/')[1]
+  res.render('bio', {current_url: current_url});
 });
 
 router.get('/contact', function (req, res, next) {
+  const current_url = req.active = req.path.split('/')[1]
 
-  res.render('contact')
+  res.render('contact', {current_url: current_url})
 })
 
 router.post('/contact', function (req, res, next) {

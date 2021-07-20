@@ -1,0 +1,268 @@
+<!-- DIV CHANGEMENT DE POLICE A SUPPRIMER APRES LE CHOIX DE LUCIE -->
+<div style="z-index: 2000; position:  fixed; bottom: 0; width: 100%; align-items: center; display: flex;  justify-content: center;  padding: 1rem 0;" >
+    <button id="test-font-btn" style="  background-color: white; box-shadow: 0 2px 2px 2px #4275f440; padding: 0.3rem 0.5rem; border-radius: 8px; outline: none; border: unset; z-index: 1999;font-family: Roboto !important; " onclick="switchInfo()" >Changer la police</button>
+    <div id="info_font_family" style="justify-content: space-between; padding-left: 2rem; z-index: 1900; display: flex; align-items: center;  position: absolute; left: 0; top: 10rem; bottom: 0; right: 0;background-color: #1e1e1ecf;backdrop-filter: blur(2px);">
+        <div style="display: flex; align-items: center; width: 47%;">
+            <p style=" margin-bottom: unset; color: white; font-family: Roboto !important;">Police : </p>
+            <p style=" margin-bottom: unset;color: white ; font-size: 1.5rem; margin-left: 1rem;width: 14rem;" id="police_test">"Roboto"</p>
+            <p id="verif_title" style="margin-bottom: unset; display: none; color: white; font-family: Roboto !important;margin-left: 1rem">Vérif : </p>
+            <p id="verif_police" style="margin-bottom: unset; display: none ;color: white; font-size: 2.2rem; margin-left: 1rem">medTandem</p>
+        </div>
+        <div class="panel_right_test" style="display: flex; width: 47%; height: 100%; justify-content: space-between ">
+            <div class="btn-font-selection" style="align-self: flex-end; padding: 0.8rem 0; height: 80%; display: flex; flex-direction: column; justify-content: space-between">
+                <div style="">
+                    <span style="color: white; ">Chercher sur <a style="color: white;  font-weight: bold" target="_blank" href="https://fonts.google.com/">Google Font</a></span>
+                    <div style="display: flex; margin-top: 1rem">
+                        <input id="font-input" type="text" placeholder="Le nom de la police">
+                        <button onclick="loadFont()" id="#btn-from-google-font">Ajouter</button>
+                    </div>
+                    <p style="display: none; color: white; margin-top: 1rem;" id="error_message_ggoogo">Cette police n'est pas valide</p>
+                </div>
+                <div style="display: flex">
+                    <button onclick="switchAllPage(this)" id="font_page" data-font="">Appliquer à la page</button>
+                    <button onclick="applyFontOnClick(this)" data-active="false" id="font_select" dada-font="">select</button>
+
+                </div>
+            </div>
+            <div class="allFontContainer" style="margin: 2.2rem 3rem; display: flex; flex-wrap: wrap; width: 70%">
+                <button load="false" onclick="activeFontBtn(this)" class="fontfont" style="height: fit-content;font-size: 1.5rem; margin: 1rem; font-family: Roboto !important; ">Roboto</button>
+                <button load="false" onclick="activeFontBtn(this)" class="fontfont" style="height: fit-content; margin: 1rem; font-size: 1.5rem; font-family: textaAltHeavy !important; ">textaAltHeavy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- DIV CHANGEMENT DE POLICE A SUPPRIMER APRES LE CHOIX DE LUCIE -->
+
+
+
+
+<!-- SCRIPT CHANGEMENT DE POLICE A SUPPRIMER APRES LE CHOIX DE LUCIE -->
+<script>
+    const input = document.querySelector('#font-input')
+    const testBtn = document.querySelector('#test-font-btn');
+    const addFontBtn = document.querySelector('#btn-from-google-font');
+    const errorMessage = document.querySelector('#error_message_ggoogo');
+    const elementStyledList = []
+    const fontContainer = document.querySelector('.allFontContainer');
+    const allPageBtn = document.querySelector('#font_page');
+    const selectPageBtn = document.querySelector('#font_select')
+
+    var menuIsVisible = false;
+
+
+
+
+
+    const applyFontOnClick = function (element) {
+
+        if (element.dataset.active == "false") {
+            element.style.backgroundColor ="red"
+            element.dataset.active = "true"
+            document.body.style.cursor="cell";
+
+        } else {
+            document.body.style.cursor="default";
+            element.style.backgroundColor ="white"
+            element.dataset.active = "false"
+        }
+
+    }
+
+    const changeFontSize = function (element) {
+
+        if (element.dataset.active == "false") {
+            element.style.backgroundColor ="red"
+            element.dataset.active = "true"
+            document.body.style.cursor="cell";
+        } else {
+            document.body.style.cursor="default";
+            element.style.backgroundColor ="white"
+            element.dataset.active = "false"
+        }
+    }
+
+
+    window.addEventListener('mouseup', function () {
+        const textSelected = window.getSelection();
+        const fontValue = selectPageBtn.dataset.font
+        if (textSelected && selectPageBtn.dataset.active == "true" && fontValue != null) {
+            const parentElement = textSelected.getRangeAt(0).startContainer.parentNode
+            elementStyledList.push(parentElement)
+            parentElement.style.fontFamily = `${fontValue}`;
+        }
+
+
+    })
+
+
+
+
+
+
+
+    const activeFontBtn = function (element) {
+        const allFontBtn = document.querySelectorAll('.fontfont');
+        document.body.style.cursor="default";
+        selectPageBtn.style.backgroundColor ="white"
+        selectPageBtn.dataset.active = "false"
+
+        if (element.attributes.load.value == 'true') {
+            element.style.backgroundColor="white"
+            element.attributes.load.value="false"
+            allPageBtn.dataset.font=""
+            selectPageBtn.dataset.font=""
+        } else {
+            allFontBtn.forEach( (font) => {
+                if (element == font) {
+                    font.style.backgroundColor="red"
+                    allPageBtn.dataset.font=`${font.innerText}`
+                    selectPageBtn.dataset.font=`${font.innerText}`
+                    font.attributes.load.value="true"
+                } else {
+                    font.style.backgroundColor="white"
+                    font.attributes.load.value="false"
+                }
+            })
+        }
+
+
+
+
+
+
+    }
+
+
+
+
+
+    const loadFont = () => {
+
+        const newFont = capitalizeFontString(input.value.trim())
+
+
+
+
+        // il faut gérer la capitalisation quand il y a plusieurs mots.
+        // IL faut capitaliser tous les mots en fait. Probablement avec un each etc..
+
+        console.log('la value de linput')
+        console.log(newFont)
+        document.querySelector('#error_message_ggoogo').style.display="block"
+        document.querySelector('#error_message_ggoogo').innerText = "Chargement..."
+
+        WebFont.load({
+            google: {
+                families: [`${newFont}`]
+            },
+            loading: function() {
+                console.log("Fonts are being loaded");
+            },
+            active: function() {
+                console.log("Fonts have been rendered")
+
+                const arr = []
+
+                document.querySelectorAll('.fontfont').forEach( (elem) => {
+
+                    if ( elem.innerText == newFont) {
+                        arr.push('false')
+                    }
+                })
+
+                if (arr.includes('false')) {
+                    document.querySelector('#error_message_ggoogo').style.color="red"
+                    document.querySelector('#error_message_ggoogo').innerText="Police déjà ajouté !"
+                    setTimeout( () => {
+                        document.querySelector('#error_message_ggoogo').style.display="none"
+                        document.querySelector('#error_message_ggoogo').style.color="white"
+                    }, 3000)
+
+                } else {
+                    const newFOntComponent = document.createElement("button");
+                    newFOntComponent.innerText = `${newFont}`
+                    newFOntComponent.setAttribute('load', 'false');
+                    newFOntComponent.style.cssText = `font-family:${newFont} !important; margin: 1rem; font-size: 1.5rem; height: fit-content`
+                    newFOntComponent.classList.add('fontfont')
+                    newFOntComponent.setAttribute('onClick', "activeFontBtn(this)")
+                    document.querySelector('.allFontContainer').appendChild(newFOntComponent)
+                    input.value=""
+                    document.querySelector('#error_message_ggoogo').innerText = "Ajouté"
+                    setTimeout( () => {
+                        document.querySelector('#error_message_ggoogo').style.display="none"
+                    }, 3000)
+                }
+            },
+            inactive: function () {
+                console.log("ca marchae pas!");
+                document.querySelector('#error_message_ggoogo').style.color="red"
+                document.querySelector('#error_message_ggoogo').innerText="Police non valide"
+                setTimeout( () => {
+                    document.querySelector('#error_message_ggoogo').style.display="none"
+                    document.querySelector('#error_message_ggoogo').style.color="white"
+                }, 3000)
+            }
+        });
+    }
+
+
+    const capitalizeFontString = (sentence) => {
+        const nexSentenceSplited = sentence.split(' ');
+        for (var i = 0; i < nexSentenceSplited.length; i++) {
+            nexSentenceSplited[i] = nexSentenceSplited[i].charAt(0).toUpperCase() + nexSentenceSplited[i].substring(1);
+        }
+        return nexSentenceSplited.join(' ');
+    }
+
+    const switchAllPage = (element) => {
+        elementStyledList.forEach( (element) => {
+            element.style.fontFamily= ""
+        })
+        const font = element.dataset.font
+        document.body.style.cssText = ` font-family:${font} !important`;
+    }
+
+
+    const switchFont = () => {
+
+        // Je dois maintenant coder la logique d'application à la page.
+        // et la logique d'application par selection.
+
+        const currentFont = window.getComputedStyle(document.body).fontFamily
+
+        if (currentFont == "Roboto") {
+            document.body.style.cssText = 'font-family:textaAltHeavy !important';
+            document.querySelector('#police_test').innerText='"TextaAlt-Heavy"'
+            document.querySelector('#verif_police').style.display="block"
+            document.querySelector('#verif_title').style.display="block"
+            elementStyledList.forEach( (element) => {
+                element.style.fontFamily= "textaAltHeavy "
+            })
+        } else if (currentFont == "textaAltHeavy") {
+            document.body.style.fontFamily="Roboto"
+            document.querySelector('#police_test').innerText='"Roboto"'
+            document.querySelector('#verif_police').style.display="none"
+            document.querySelector('#verif_title').style.display="none"
+        } else {
+            document.body.style.fontFamily="textaAltHeavy"
+            document.querySelector('#police_test').innerText='"TextaAlt-Heavy"'
+            document.querySelector('#verif_police').style.display="block"
+            document.querySelector('#verif_title').style.display="block"
+        }
+    }
+    const switchInfo = () => {
+        const panel = document.querySelector('#info_font_family');
+        if (!menuIsVisible) {
+            menuIsVisible = true;
+            panel.style.transition="top 0.5s ease"
+            panel.style.top="-13rem"
+        } else {
+            panel.style.transition="top 0.5s ease"
+            panel.style.top="10rem"
+            menuIsVisible = false;
+        }
+
+    }
+</script>
+<!-- SCRIPT CHANGEMENT DE POLICE A SUPPRIMER APRES LE CHOIX DE LUCIE -->
+
