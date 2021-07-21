@@ -1,14 +1,39 @@
-<div class="navbar">
-    <div class="navbar__logo">
-        <a href="/">
-        <img src="/images/naif-page-001%20nb.jpg" alt="logo_naïf">
-        </a>
-    </div>
+<div class="navbar__desktop">
+    <div class="navbar__component">
+        <div class="navbar__logo">
+            <a href="/">
+                <img src="/images/naif-page-001%20nb.jpg" alt="logo_naïf">
+            </a>
+        </div>
 
-    <div class="navbar__menu">
-        <a class="<%- current_url === "bio" ? "active_nav_link" : "" %>" href="/bio">Bio</a>
-        <a class="<%- current_url === "contact" ? "active_nav_link" : "" %>" href="/contact">Contact</a>
-        <a href="#">Oeuvres</a>
+        <div class="navbar__menu">
+            <a class="<%- current_url === "bio" ? "active_nav_link" : "" %>" href="/bio">Bio</a>
+            <a class="<%- current_url === "contact" ? "active_nav_link" : "" %>" href="/contact">Contact</a>
+            <a href="#">Oeuvres</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="navbar__mobile">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="/">
+                <img src="/images/naif-page-001%20nb.jpg" alt="logo_naïf">
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent3">
+        <div class="bg-light shadow-3 p-4">
+            <a href="/bio" class="btn btn-link btn-block border-bottom m-0 <%- current_url === "bio" ? "active_link" : "" %>">Bio</a>
+            <a class="btn btn-link btn-block border-bottom m-0">Oeuvres</a>
+            <a href="/contact" class="btn btn-link btn-block m-0 <%- current_url === "contact" ? "active_nav_link" : "" %>">Contact</a>
+        </div>
     </div>
 
 </div>

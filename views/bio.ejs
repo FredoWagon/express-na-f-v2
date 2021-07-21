@@ -2,12 +2,8 @@
 <html>
 <head>
     <title>Bio</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/images/icone2.jpg">
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <%- include ('partials/header.ejs') %>
+
 </head>
 <body>
 
@@ -15,17 +11,33 @@
 
 
 <div class="bio">
-    <img src="/images/photo_profil.jpg" alt="">
-    <div class="bio__texte">
-        <p>Né en 1988, il commence la peinture dans les années 2000 par le biais du graffiti, depuis, après être passé par la sculpture et la taille de pierre ainsi que par les beaux arts, il mélange dans sa peinture diverses influences telles que les arts primitifs, l'art des anciennes civilisations, l'art naïf, le surréalisme...
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <img src="/images/photo_profil.jpg" alt="photo_profil">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="bio__text">
+                    <p>Né en 1988, il commence la peinture dans les années 2000 par le biais du graffiti, depuis, après être passé par la sculpture et la taille de pierre ainsi que par les beaux arts, il mélange dans sa peinture diverses influences telles que les arts primitifs, l'art des anciennes civilisations, l'art naïf, le surréalisme...
 
-            Sa peinture laisse une grande part à l'improvisation et se compose la plupart du temps d'êtres, de formes abstraites, de symboles qui s'enchevêtrent et se lient les uns aux autres pour former des associations nouvelles, énigmatiques, ou de nouveaux êtres hybrides, tels des chimères d'anciens mythes païens. Elle fait l'éloge du vivant en général, de son fourmillement créatif, elle parle de sa folie, de sa générosité, des liens qui le tissent et le constituent, en essayant de garder pour prisme le regard d'un enfant naïf et curieux. </p>
+                        Sa peinture laisse une grande part à l'improvisation et se compose la plupart du temps d'êtres, de formes abstraites, de symboles qui s'enchevêtrent et se lient les uns aux autres pour former des associations nouvelles, énigmatiques, ou de nouveaux êtres hybrides, tels des chimères d'anciens mythes païens. Elle fait l'éloge du vivant en général, de son fourmillement créatif, elle parle de sa folie, de sa générosité, des liens qui le tissent et le constituent, en essayant de garder pour prisme le regard d'un enfant naïf et curieux. </p>
+
+
+
+                </div>
+            </div>
+        </div>
+
     </div>
 
-
 </div>
-<%- include ('partials/footer.ejs') %>
+
+
+
+<!--<%- include ('partials/footer.ejs') %>-->
 <%- include ('partials/font_test.ejs') %>
+
+
 
 
 

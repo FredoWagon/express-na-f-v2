@@ -5,43 +5,59 @@ body {
 a {
   color: #00B7FF; }
 
-.navbar {
+@media (max-width: 600px) {
+  .navbar__desktop {
+    display: none; } }
+
+.navbar__mobile {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  .navbar__mobile a {
+    color: black; }
+    .navbar__mobile a.active_link {
+      opacity: 0.5; }
+  @media (min-width: 601px) {
+    .navbar__mobile {
+      display: none; } }
+  .navbar__mobile img {
+    height: 3rem; }
+
+.navbar__component {
   height: 7rem;
   padding: 0 5rem;
   display: flex;
-  justify-content: space-between; }
-  .navbar .navbar__logo img {
+  justify-content: space-between;
+  overflow: hidden; }
+  .navbar__component .navbar__logo img {
     height: 7rem; }
-  .navbar .navbar__menu {
+  .navbar__component .navbar__menu {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%; }
-    .navbar .navbar__menu a {
+    .navbar__component .navbar__menu a {
       margin: 0 2rem;
       font-size: 1.5rem;
       text-decoration: none;
       color: black;
       height: fit-content; }
-      .navbar .navbar__menu a.active_nav_link {
+      .navbar__component .navbar__menu a.active_nav_link {
         opacity: 0.5; }
-      .navbar .navbar__menu a:hover {
+      .navbar__component .navbar__menu a:hover {
         opacity: 0.5;
         cursor: pointer;
         transition: opacity 0.3s ease; }
 
 .bio {
-  padding: 5rem 10rem;
-  display: flex;
-  justify-content: space-between; }
+  margin-top: 5rem; }
   .bio img {
-    width: 55rem; }
-  .bio .bio__texte {
-    padding: 3rem 6rem;
+    width: 100%; }
+  .bio .bio__text {
     display: flex;
-    align-items: center; }
-    .bio .bio__texte p {
-      font-size: 1.3rem; }
+    align-items: center;
+    height: 100%;
+    padding: 5rem; }
 
 .contact__bloc {
   display: flex;

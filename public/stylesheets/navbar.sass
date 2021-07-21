@@ -1,8 +1,27 @@
-.navbar
+.navbar__desktop
+  @media (max-width: 600px)
+    display: none
+
+.navbar__mobile
+  position: fixed
+  top: 0
+  width: 100%
+  a
+    color: black
+    &.active_link
+      opacity: 0.5
+
+  @media (min-width: 601px)
+    display: none
+  img
+    height: 3rem
+
+.navbar__component
   height: 7rem
   padding: 0 5rem
   display: flex
   justify-content: space-between
+  overflow: hidden
 
   .navbar__logo
     img
