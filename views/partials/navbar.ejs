@@ -7,9 +7,12 @@
         </div>
 
         <div class="navbar__menu">
+            <a class="<%- current_url === "illustrations" ? "active_nav_link" : "" %>" href="/illutrations">ILLUSTRATIONS</a>
+            <a class="<%- current_url === "murals" ? "active_nav_link" : "" %>" href="/murals">MURALS</a>
+            <a class="<%- current_url === "canvas" ? "active_nav_link" : "" %>" href="/canvas">CANVAS</a>
             <a class="<%- current_url === "bio" ? "active_nav_link" : "" %>" href="/bio">BIO</a>
             <a class="<%- current_url === "contact" ? "active_nav_link" : "" %>" href="/contact">CONTACT</a>
-            <a href="#">PEINTURES</a>
+            <a href="#">SHOP</a>
         </div>
 
     </div>
@@ -31,9 +34,12 @@
     <div class="collapse" id="navbarToggleExternalContent3">
         <div class="bg-light menu_links_burger shadow-3 p-4">
             <a href="/" class="btn btn-link btn-block border-bottom m-0 <%- current_url === "" ? "active_link" : "" %>">Home</a>
+            <a href="#" class="btn btn-link btn-block border-bottom m-0 <%- current_url === "illustrations" ? "active_link" : "" %>">Illustrations</a>
+            <a href="#" class="btn btn-link btn-block border-bottom m-0 <%- current_url === "murals" ? "active_link" : "" %>">Murals</a>
+            <a href="#" class="btn btn-link btn-block border-bottom m-0 <%- current_url === "canvas" ? "active_link" : "" %>">Canvas</a>
             <a href="/bio" class="btn btn-link btn-block border-bottom m-0 <%- current_url === "bio" ? "active_link" : "" %>">Bio</a>
-            <a class="btn btn-link btn-block border-bottom m-0">Oeuvres</a>
             <a href="/contact" class="btn btn-link btn-block m-0 <%- current_url === "contact" ? "active_link" : "" %>">Contact</a>
+            <a href="#" class="btn btn-link btn-block m-0 ">SHOP </a>
         </div>
     </div>
 
