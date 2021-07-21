@@ -3,6 +3,7 @@
 <head>
     <title>Contact</title>
     <%- include ('partials/header.ejs') %>
+    <!-- Script apparition images -->
     <script>
         const chargementImage = (target) => {
             target.style.transition="opacity 2.5s ease"
@@ -15,16 +16,13 @@
 
 
 <div class="contact__bloc">
-
     <div class="contact__image">
         <img onload="chargementImage(this)" id="contact_illu" src="/images/illustration_contact.jpg" alt="contact_illustration">
     </div>
     <%- include ('partials/contact_form.ejs') %>
-
 </div>
 
 <%- include('partials/flash_message.ejs', {current_url: current_url}); %>
-
 <%- include('partials/footer.ejs', {current_url: current_url}); %>
 
 <script>
@@ -32,7 +30,7 @@
     const contactForm = document.querySelector('#contact_form');
     const flashMessage = document.querySelector('.flash_message');
 
-
+    // send contact mail + flashmessage
     contactForm.addEventListener('submit', async (event) => {
         event.preventDefault()
         const formData = new FormData(contactForm)
@@ -50,18 +48,16 @@
                     },
                     body: formDataJsonString
                 });
-
             if (reponse.status === 200) {
                 contactForm.reset();
                 toggleFlashMessage();
             } else {
                 document.location.reload();
             }
-
         }
-
     })
 
+    // handle flash message animation + scroll
     const toggleFlashMessage = () => {
         document.body.scrollIntoView({
             block: 'start',
@@ -72,9 +68,6 @@
         setTimeout( () => {
             flashMessage.classList.remove('active_message');
         }, 3000)
-
-
-
     }
 
 

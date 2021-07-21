@@ -3,18 +3,17 @@
 <head>
     <title>Bio</title>
     <%- include ('partials/header.ejs') %>
+    <!-- Script apparition images -->
     <script>
         const chargementImage = (target) => {
             target.style.transition="opacity 2.5s ease"
             target.style.opacity ="1"
         }
     </script>
-
 </head>
 <body>
 
 <%- include ('partials/navbar.ejs') %>
-
 
 <div class="bio">
     <div class="container">
@@ -23,10 +22,8 @@
                 <div class="bio__image">
                     <img onload="chargementImage(this)" id="bio_picture" src="/images/photo_profil.jpg" alt="photo_profil">
                 </div>
-
             </div>
             <div class="col-sm-12 col-md-6">
-
                 <div class="bio__text">
                     <p>Né en 1988, il commence à peindre dans les années 2000 par le biais du graffiti, après être passé par la sculpture et la taille de pierre ainsi que par les beaux arts, il mélange dans sa peinture diverses influences telles que les arts primitifs, l'art populaire, l'art naïf, le surréalisme...
                         Sa peinture laisse une grande part à l'improvisation et se compose la plupart du temps d'êtres, de formes abstraites, de symboles universels qui s'enchevêtrent et se lient les uns aux autres pour former des associations nouvelles, parfois énigmatiques, ou de nouveaux êtres hybrides, tels des chimères d'anciens mythes païens. Elle fait l'éloge du vivant en général, de son fourmillement créatif, parle de sa folie, de sa générosité, des liens qui le tissent et le constituent, en essayant de garder pour prisme le regard fasciné d'un enfant naïf et curieux. </p>
@@ -42,22 +39,10 @@
             <p> <mark>2020</mark>   Exposition collective "Acqua Alta" au sein du festival de street art Muralis (Dax)</p>
             <p> Exposition collective "Les Curieux Musées du Monde de l'Ouest" (Capbreton)</p>
         </div>
-
     </div>
-
 </div>
 
-
-
 <%- include ('partials/footer.ejs') %>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

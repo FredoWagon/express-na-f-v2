@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home</title>
-    <%- include ('partials/header.ejs') %>
-    <script>
-      const chargementImage = (target) => {
-        target.style.transition="opacity 2.5s ease"
-        target.style.opacity ="1"
-      }
-    </script>
-  </head>
-  <body>
+<head>
+  <title>Home</title>
+  <%- include ('partials/header.ejs') %>
+  <script>
+    const chargementImage = (target) => {
+      target.style.transition="opacity 2.5s ease"
+      target.style.opacity ="1"
+    }
+  </script>
+</head>
+<body>
 
-  <%- include ('partials/navbar.ejs') %>
+<%- include ('partials/navbar.ejs') %>
 
 <div class="index__container">
 
@@ -26,28 +26,18 @@
       <img onload="chargementImage(this)" style="width: 100%" src="/images/mur3.jpg" alt="">
       <img onload="chargementImage(this)" style="width: 100%; margin-top: 10rem; margin-bottom: 10rem" src="/images/illu3.jpg" alt="">
       <img onload="chargementImage(this)" style="width: 100%" src="/images/mur4.JPG" alt="">
-
-
-
-
-
-
-
     </div>
-
   </div>
 </div>
 
+<%- include ('partials/footer.ejs') %>
 
-  <%- include ('partials/footer.ejs') %>
-
-
-  <!- protection des images -->
-  <script>
-    const allImage =  document.querySelectorAll("img");
-    allImage.forEach( (image) => {
-      image.addEventListener('contextmenu', event => event.preventDefault());
-    })
-  </script>
-  </body>
+<!-- protection des images -->
+<script>
+  const allImage =  document.querySelectorAll("img");
+  allImage.forEach( (image) => {
+    image.addEventListener('contextmenu', event => event.preventDefault());
+  })
+</script>
+</body>
 </html>
