@@ -3,19 +3,45 @@
   <head>
     <title>Home</title>
     <%- include ('partials/header.ejs') %>
+    <script>
+      const chargementImage = (target) => {
+        target.style.transition="opacity 2.5s ease"
+        target.style.opacity ="1"
+      }
+    </script>
   </head>
   <body>
 
   <%- include ('partials/navbar.ejs') %>
 
-  
-  <div>
-    <img style="width: 100%" src="/images/main_photo.jpg" alt="">
+<div class="index__container">
+
+
+  <div class="container mt-5">
+    <img onload="chargementImage(this)" style="width: 100%; opacity: 0;" src="/images/main_photo.jpg" alt="">
+    <div class="index__image">
+
+
+
+
+
+      <img onload="chargementImage(this)" style="width: 100%" src="/images/mur2.jpg" alt="">
+      <img onload="chargementImage(this)" style="width: 100%" src="/images/mur3.jpg" alt="">
+    </div>
+
   </div>
+</div>
 
 
   <%- include ('partials/footer.ejs') %>
-  <%- include ('partials/font_test.ejs') %>
 
+
+  <!- protection des images -->
+  <script>
+    const allImage =  document.querySelectorAll("img");
+    allImage.forEach( (image) => {
+      image.addEventListener('contextmenu', event => event.preventDefault());
+    })
+  </script>
   </body>
 </html>

@@ -3,25 +3,88 @@
 <head>
     <title>Contact</title>
     <%- include ('partials/header.ejs') %>
+    <script>
+        const chargementImage = (target) => {
+            target.style.transition="opacity 2.5s ease"
+            target.style.opacity ="1"
+        }
+    </script>
 </head>
 <body>
 <%- include ('partials/navbar.ejs') %>
 
 
-    <div class="contact__bloc">
-        <%- include ('partials/contact_form.ejs') %>
-        <div class="contact__image">
-            <img src="/images/illustration_contact.jpg" alt="contact_illustration">
-        </div>
+<div class="contact__bloc">
 
+    <div class="contact__image">
+        <img onload="chargementImage(this)" id="contact_illu" src="/images/illustration_contact.jpg" alt="contact_illustration">
     </div>
+    <%- include ('partials/contact_form.ejs') %>
 
+</div>
+
+<%- include('partials/flash_message.ejs', {current_url: current_url}); %>
 
 <%- include('partials/footer.ejs', {current_url: current_url}); %>
-<%- include ('partials/font_test.ejs') %>
+
+<script>
+    const submitBtn = document.querySelector('.contact__btn');
+    const contactForm = document.querySelector('#contact_form');
+    const flashMessage = document.querySelector('.flash_message');
+
+
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault()
+        const formData = new FormData(contactForm)
+        console.log(formData)
+
+        if (contactForm.checkValidity()) {
+            const plainFormData = Object.fromEntries(formData.entries());
+            const formDataJsonString = JSON.stringify(plainFormData);
+            const reponse = await fetch("/contact",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: formDataJsonString
+                });
+
+            if (reponse.status === 200) {
+                contactForm.reset();
+                toggleFlashMessage();
+            } else {
+                document.location.reload();
+            }
+
+        }
+
+    })
+
+    const toggleFlashMessage = () => {
+        document.body.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+            inline: 'nearest'
+        });
+        flashMessage.classList.add('active_message');
+        setTimeout( () => {
+            flashMessage.classList.remove('active_message');
+        }, 3000)
+
+
+
+    }
+
+
+
+</script>
 
 
 
 
-  </body>
+
+
+</body>
 </html>

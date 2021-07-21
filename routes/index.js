@@ -21,8 +21,9 @@ router.get('/contact', function (req, res, next) {
 })
 
 router.post('/contact', function (req, res, next) {
-  console.log(req.body)
-  sendMessage();
+
+  sendMessage(req.body);
+  res.status(200).json({ message: "c'est bon" })
 })
 
 module.exports = router;

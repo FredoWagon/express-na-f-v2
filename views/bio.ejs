@@ -3,6 +3,12 @@
 <head>
     <title>Bio</title>
     <%- include ('partials/header.ejs') %>
+    <script>
+        const chargementImage = (target) => {
+            target.style.transition="opacity 2.5s ease"
+            target.style.opacity ="1"
+        }
+    </script>
 
 </head>
 <body>
@@ -14,18 +20,27 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <img src="/images/photo_profil.jpg" alt="photo_profil">
+                <div class="bio__image">
+                    <img onload="chargementImage(this)" id="bio_picture" src="/images/photo_profil.jpg" alt="photo_profil">
+                </div>
+
             </div>
             <div class="col-sm-12 col-md-6">
+
                 <div class="bio__text">
-                    <p>Né en 1988, il commence la peinture dans les années 2000 par le biais du graffiti, depuis, après être passé par la sculpture et la taille de pierre ainsi que par les beaux arts, il mélange dans sa peinture diverses influences telles que les arts primitifs, l'art des anciennes civilisations, l'art naïf, le surréalisme...
-
-                        Sa peinture laisse une grande part à l'improvisation et se compose la plupart du temps d'êtres, de formes abstraites, de symboles qui s'enchevêtrent et se lient les uns aux autres pour former des associations nouvelles, énigmatiques, ou de nouveaux êtres hybrides, tels des chimères d'anciens mythes païens. Elle fait l'éloge du vivant en général, de son fourmillement créatif, elle parle de sa folie, de sa générosité, des liens qui le tissent et le constituent, en essayant de garder pour prisme le regard d'un enfant naïf et curieux. </p>
-
-
-
+                    <p>Né en 1988, il commence à peindre dans les années 2000 par le biais du graffiti, après être passé par la sculpture et la taille de pierre ainsi que par les beaux arts, il mélange dans sa peinture diverses influences telles que les arts primitifs, l'art populaire, l'art naïf, le surréalisme...
+                        Sa peinture laisse une grande part à l'improvisation et se compose la plupart du temps d'êtres, de formes abstraites, de symboles universels qui s'enchevêtrent et se lient les uns aux autres pour former des associations nouvelles, parfois énigmatiques, ou de nouveaux êtres hybrides, tels des chimères d'anciens mythes païens. Elle fait l'éloge du vivant en général, de son fourmillement créatif, parle de sa folie, de sa générosité, des liens qui le tissent et le constituent, en essayant de garder pour prisme le regard fasciné d'un enfant naïf et curieux. </p>
                 </div>
             </div>
+        </div>
+        <div class="bio__expo">
+            <p> <mark>2015</mark>   Exposition collective "Wakanda Afterlife" à l'espace quinzequinze (Paris)</p>
+            <p> <mark>2016</mark>   Exposition collective à la galerie l'Envers (Bordeaux)</p>
+            <p> <mark>2017</mark>   Exposition collective au centre d'art contemporain Raymond Farbos (Mont de Marsan)</p>
+            <p> <mark>2018</mark>   Exposition personnelle "Visions Mésoaméricaines" à la Caféothèque (Paris)</p>
+            <p>  <mark>2019</mark>   Exposition personnelle au concept store Le Shop (Bordeaux)</p>
+            <p> <mark>2020</mark>   Exposition collective "Acqua Alta" au sein du festival de street art Muralis (Dax)</p>
+            <p> Exposition collective "Les Curieux Musées du Monde de l'Ouest" (Capbreton)</p>
         </div>
 
     </div>
@@ -34,8 +49,10 @@
 
 
 
-<!--<%- include ('partials/footer.ejs') %>-->
-<%- include ('partials/font_test.ejs') %>
+<%- include ('partials/footer.ejs') %>
+
+
+
 
 
 

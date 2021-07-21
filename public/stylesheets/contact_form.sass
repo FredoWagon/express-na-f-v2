@@ -1,22 +1,23 @@
 
 .contact__bloc
   display: flex
-  position: relative
   width: 100%
-  overflow: hidden
-  padding-top: 5rem
+  @media (max-width: 600px)
+    margin-top: 5rem
+
+  align-items: center
+  flex-direction: column
   .contact__image
-    transform: rotate(-17deg)
     img
-      width: 100%
-      transform: translate(225px, 110px)
+      opacity: 0
+      width: 35rem
+      @media (max-width: 600px)
+        width: 19rem
+
 
 
 
 .contact
-  position: absolute
-  left: 23rem;
-  z-index: 10
   display: flex
   flex-direction: column
   align-items: center

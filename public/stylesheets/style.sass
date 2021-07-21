@@ -1,7 +1,15 @@
 
 body
   margin: unset
-  font-family: 'Roboto Condensed', sans-serif
+  font-family: 'Roboto', sans-serif
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+.index__container
+  @media (max-width: 600px)
+    padding-top: 3rem;
+
 
 a
   color: #00B7FF
@@ -10,3 +18,5 @@ a
 @import "bio"
 @import "contact_form"
 @import "footer"
+@import "flash_message"
+@import "index"
