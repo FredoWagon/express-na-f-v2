@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Illustrations</title>
+    <%- include ('partials/header.ejs') %>
+    <!-- Script apparition images -->
+    <script>
+        const chargementImage = (target) => {
+            target.style.transition="opacity 2.5s ease"
+            target.style.opacity ="1"
+        }
+    </script>
+</head>
+<body>
+
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container mt-5">
+    <div class="index__image">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pageillu1.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%; margin-bottom: 12rem" src="/images/pageillu2.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pageillu3.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pageillu4.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pageillu5.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pageillu6.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pageillu7.jpg" alt="">
+    </div>
+</div>
+
+
+
+<%- include ('partials/footer.ejs') %>
+<!-- protection des images -->
+<script>
+    const allImage =  document.querySelectorAll("img");
+    allImage.forEach( (image) => {
+        image.addEventListener('contextmenu', event => event.preventDefault());
+    })
+</script>
+</body>
+</html>

@@ -26,4 +26,14 @@ router.post('/contact', function (req, res, next) {
   res.status(200).json({ message: "c'est bon" })
 })
 
+router.get('/illustrations', function (req,res,next) {
+  const current_url = req.active = req.path.split('/')[1]
+  res.render('illustration',{current_url: current_url})
+})
+
+router.get('/murals', function (req,res,next) {
+  const current_url = req.active = req.path.split('/')[1]
+  res.render('mur',{current_url: current_url})
+})
+
 module.exports = router;

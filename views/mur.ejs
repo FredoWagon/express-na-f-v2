@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Murals</title>
+    <%- include ('partials/header.ejs') %>
+    <!-- Script apparition images -->
+    <script>
+        const chargementImage = (target) => {
+            target.style.transition="opacity 2.5s ease"
+            target.style.opacity ="1"
+        }
+    </script>
+</head>
+<body>
+
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container mt-5">
+    <div class="index__image">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur1.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%; margin-bottom: 12rem" src="/images/pagemur2.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur3.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur4.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur5.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur6.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur7.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/pagemur8.jpg" alt="">
+    </div>
+</div>
+
+
+
+<%- include ('partials/footer.ejs') %>
+<!-- protection des images -->
+<script>
+    const allImage =  document.querySelectorAll("img");
+    allImage.forEach( (image) => {
+        image.addEventListener('contextmenu', event => event.preventDefault());
+    })
+</script>
+</body>
+</html>
