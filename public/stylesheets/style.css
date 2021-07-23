@@ -1,7 +1,7 @@
 body {
   margin: unset;
   font-family: 'Roboto', sans-serif;
-  min-height: 100vh;
+  min-height: 102vh;
   display: flex;
   flex-direction: column; }
 
