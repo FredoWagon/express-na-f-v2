@@ -12,7 +12,7 @@ body {
 a {
   color: #00B7FF; }
 
-@media (max-width: 600px) {
+@media (max-width: 892px) {
   .navbar__desktop {
     display: none; } }
 
@@ -25,7 +25,7 @@ a {
     color: black; }
     .navbar__mobile a.active_link {
       opacity: 0.4; }
-  @media (min-width: 601px) {
+  @media (min-width: 891px) {
     .navbar__mobile {
       display: none; } }
   .navbar__mobile img {
@@ -38,7 +38,6 @@ a {
   background-color: white;
   z-index: 50;
   height: 8rem;
-  padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   overflow: hidden; }
@@ -59,6 +58,9 @@ a {
       text-decoration: none;
       color: black;
       height: fit-content; }
+      @media (max-width: 1140px) {
+        .navbar__component .navbar__menu a {
+          margin: 0 0.5rem; } }
       .navbar__component .navbar__menu a.active_nav_link {
         opacity: 0.5; }
       .navbar__component .navbar__menu a:hover {
