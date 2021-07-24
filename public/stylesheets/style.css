@@ -49,6 +49,8 @@ a {
     justify-content: center;
     align-items: center;
     height: 100%; }
+    .navbar__component .navbar__menu #instagram_icone {
+      font-size: 2.3rem; }
     .navbar__component .navbar__menu a {
       font-family: 'Roboto', sans-serif;
       font-weight: 300;
