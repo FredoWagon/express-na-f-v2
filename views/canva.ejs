@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas</title>
+    <%- include ('partials/header.ejs') %>
+    <!-- Script apparition images -->
+    <script>
+        const chargementImage = (target) => {
+            target.style.transition="opacity 2.5s ease"
+            target.style.opacity ="1"
+        }
+    </script>
+</head>
+<body>
+
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container mt-5">
+    <div class="index__image">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/canvas1.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%;" src="/images/canvas2.jpg" alt="">
+        <img onload="chargementImage(this)" style="width: 100%" src="/images/canvas3.jpg" alt="">
+    </div>
+</div>
+
+
+
+<%- include ('partials/footer.ejs') %>
+<!-- protection des images -->
+<script>
+    const allImage =  document.querySelectorAll("img");
+    allImage.forEach( (image) => {
+        image.addEventListener('contextmenu', event => event.preventDefault());
+    })
+</script>
+</body>
+</html>

@@ -36,4 +36,9 @@ router.get('/murals', function (req,res,next) {
   res.render('mur',{current_url: current_url})
 })
 
+router.get('/canvas', function (req,res,next) {
+  const current_url = req.active = req.path.split('/')[1]
+  res.render('canva',{current_url: current_url})
+})
+
 module.exports = router;
