@@ -6,8 +6,9 @@
     <!-- Script apparition images -->
     <script>
         const chargementImage = (target) => {
-            target.style.transition="opacity 2.5s ease"
-            target.style.opacity ="1"
+            console.log(target.parentElement)
+            target.parentElement.style.transition="opacity 2.5s ease"
+            target.parentElement.style.opacity ="1"
         }
     </script>
 </head>
