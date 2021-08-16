@@ -208,8 +208,7 @@ a {
     transition: bottom 0.5s ease; }
 
 .index__image {
-  padding: 0 10rem;
-  margin-top: 2rem; }
+  padding: 0 10rem; }
   @media (max-width: 600px) {
     .index__image {
       padding: unset; } }
